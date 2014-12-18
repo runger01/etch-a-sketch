@@ -1,0 +1,14 @@
+/* canvas */
+.column {
+    /*border: solid 1px #efefef;*/
+    float: left;
+}
+.cell {
+    height: 8px;
+    width: 8px;
+    margin: 1px;
+    border: solid 1px #c6c6c6;
+}
+.red {background: red;}
+.blue {background: blue;}
+.green {background: green;}
