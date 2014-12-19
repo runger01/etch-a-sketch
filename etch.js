@@ -8,11 +8,10 @@ var generateCanvas = function(width, height) {
     }
 }
 
-// var paintCell = function(color) {
-//     $(".cell").mouseover(function(){
-//         $(this).addClass(color);
-//     });
-// }
+var clearCanvas = function() {
+	$(".column").remove();
+};
+
 var paintCell = function() {
     $(".cell").hover(
         function(){
@@ -27,4 +26,5 @@ var paintCell = function() {
 $(document).ready(function() {
     generateCanvas(16, 16);
     paintCell();
+
 });
