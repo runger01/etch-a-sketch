@@ -30,7 +30,7 @@ button:hover {
 	color: white;
 }
 /*main content area*/
-.content {
+#canvas_wrap {
 	float: center;
 	display: block;
 	margin: 10px auto;
@@ -45,6 +45,8 @@ button:hover {
 	padding: 7px;
 	border-radius: 3px;
     float: left;
+    max-width: 720px;
+    max-height: 720px;
 }
 .column {
     float: left;
@@ -54,10 +56,3 @@ button:hover {
     width: 45px;
     background: #efefef;
 }
-/*colors*/
-.red            {background: red;}
-.light_red      {background: #ee6363;}
-.green          {background: green;}
-.light_green    {background: #63ee63;}
-.blue           {background: blue;}
-.light_blue     {background: #6363ee;}
