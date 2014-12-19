@@ -26,5 +26,7 @@ var paintCell = function() {
 $(document).ready(function() {
     generateCanvas(16, 16);
     paintCell();
-
+    $("button[name=button_clear]").click(function() {
+        $(".column").remove();
+    });
 });
