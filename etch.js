@@ -8,6 +8,13 @@ var generateCanvas = function(width, height) {
     }
 }
 
+var paintCell = function(color) {
+    $(".cell").mouseover(function(){
+        $(this).addClass(color);
+    });
+}
+
 $(document).ready(function() {
     generateCanvas(16, 16);
+    paintCell("green");
 });
