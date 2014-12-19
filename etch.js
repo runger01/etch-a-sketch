@@ -1,5 +1,6 @@
+// this becomes sluggish with a canvas size of about 200, unbearable at 300, and
+// 400 will crash the brower (only tested on my system)
 var generateCanvas = function(canvasSize, cellSize) {
-    //generate canvas columns followed by canvas rows(cells)
     for(var i = 0; i < canvasSize; i++) {
         $("#canvas").append("<div class='column'></div>");
     }
@@ -11,11 +12,7 @@ var generateCanvas = function(canvasSize, cellSize) {
     $(".cell").css("height", cellSize);
 }
 
-var paintCell = function() {
-    var red =   "#ee6363";
-    var green = "#63ee63";
-    var blue =  "#6363ee";
-
+var paintBrush = function() {
     $(".cell").hover(
         function(){
             $(this).css("background", "orange");
@@ -27,20 +24,24 @@ var paintCell = function() {
 };
 
 $(document).ready(function() {
+    var canvasSize = 720
+    var gridSize = 16;
+    var cellSize = (canvasSize/gridSize)
     // default canvas
-    generateCanvas(16);
-    paintCell();
+    generateCanvas(gridSize);
+    paintBrush();
 
     $("button[name=clear_canvas]").click(function() {
         $(".column").remove();
-        generateCanvas(16);
-        paintCell();
+        generateCanvas(gridSize, cellSize);
+        paintBrush();
     });
     $("button[name=new_canvas]").click(function() {
         $(".column").remove();
-        var canvasSize = prompt("Enter a new canvas size:");
-        cellSize = (720/canvasSize);
-        generateCanvas(canvasSize, cellSize);
-        paintCell();
+        gridSize = prompt("Enter a new canvas size:");
+        // recalculate values
+        cellSize = (canvasSize/gridSize);
+        generateCanvas(gridSize, cellSize);
+        paintBrush();
     });
 });
