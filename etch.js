@@ -15,9 +15,11 @@ var generateCanvas = function(canvasSize, cellSize) {
 var paintBrush = function() {
     $(".cell").hover(
         function(){
+            $(this).css("opacity", 1.0);
             $(this).css("background", "orange");
         },
         function(){
+            $(this).fadeTo("flow", 0.66);
             $(this).css("background", "orange");
         }
     );
