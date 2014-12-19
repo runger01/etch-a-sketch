@@ -1,7 +1,9 @@
-/* canvas */
+/*canvas*/
 #canvas {
     border: solid 1px #efefef;
     float: left;
+    min-width: 960px;
+    min-height: 960px;
 }
 .column {
     float: left;
@@ -9,9 +11,12 @@
 .cell {
     height: 10px;
     width: 10px;
-    margin: 1px;
     background: #efefef;
 }
-.red {background: red;}
-.blue {background: blue;}
-.green {background: green;}
+/*colors*/
+.red            {background: red;}
+.light_red      {background: #ee6363;}
+.green          {background: green;}
+.light_green    {background: #63ee63;}
+.blue           {background: blue;}
+.light_blue     {background: #6363ee;}

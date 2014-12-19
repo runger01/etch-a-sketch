@@ -8,13 +8,23 @@ var generateCanvas = function(width, height) {
     }
 }
 
-var paintCell = function(color) {
-    $(".cell").mouseover(function(){
-        $(this).addClass(color);
-    });
-}
+// var paintCell = function(color) {
+//     $(".cell").mouseover(function(){
+//         $(this).addClass(color);
+//     });
+// }
+var paintCell = function() {
+    $(".cell").hover(
+        function(){
+            $(this).addClass("blue");
+        },
+        function(){
+            $(this).addClass("light_blue");
+        }
+    );
+};
 
 $(document).ready(function() {
     generateCanvas(16, 16);
-    paintCell("green");
+    paintCell();
 });
