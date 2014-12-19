@@ -12,17 +12,38 @@ var generateCanvas = function(canvasSize, cellSize) {
     $(".cell").css("height", cellSize);
 }
 
-var paintBrush = function() {
+var paintBrush = function(Color) {
     $(".cell").hover(
         function(){
             $(this).css("opacity", 1.0);
-            $(this).css("background", "orange");
+            $(this).css("background", Color);
         },
         function(){
             $(this).fadeTo("flow", 0.66);
-            $(this).css("background", "orange");
+            $(this).css("background", Color);
         }
     );
+};
+
+var rainbowBrush = function() {
+    $(".cell").hover(
+        function(){
+            $(this).css("opacity", 1.0);
+            $(this).css("background", randomColor());
+        },
+        function(){
+            $(this).fadeTo("flow", 0.66);
+            $(this).css("background", randomColor());
+        }
+    );
+};
+
+var randomColor = function() {
+    var color = ("#" + Math.floor(Math.random()*10) +
+                    Math.floor(Math.random()*10) +
+                    Math.floor(Math.random()*10)
+                );
+    return color;
 };
 
 $(document).ready(function() {
@@ -31,19 +52,25 @@ $(document).ready(function() {
     var cellSize = (canvasSize/gridSize)
     // default canvas
     generateCanvas(gridSize);
-    paintBrush();
+    paintBrush(randomColor());
 
     $("button[name=clear_canvas]").click(function() {
+        $("body").css("background", "#fff");
         $(".column").remove();
         generateCanvas(gridSize, cellSize);
-        paintBrush();
+        paintBrush(randomColor());
     });
     $("button[name=new_canvas]").click(function() {
+        $("body").css("background", "#fff");
         $(".column").remove();
         gridSize = prompt("Enter a new canvas size:");
         // recalculate values
         cellSize = (canvasSize/gridSize);
         generateCanvas(gridSize, cellSize);
-        paintBrush();
+        paintBrush(randomColor());
+    });
+    $("button[name=rainbow_brush]").click(function() {
+        $("body").css("background", "url(RAINBOW_TILE.png)");
+        rainbowBrush();
     });
 });

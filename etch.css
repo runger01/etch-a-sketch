@@ -40,10 +40,10 @@ button:hover {
 }
 /*canvas*/
 #canvas {
+	background: #fff;
 	display: block;
 	margin: 0 auto;
 	padding: 7px;
-	border-radius: 3px;
     float: left;
     max-width: 720px;
     max-height: 720px;
@@ -54,5 +54,4 @@ button:hover {
 .cell {
     height: 45px;
     width: 45px;
-    background: #efefef;
 }
