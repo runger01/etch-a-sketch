@@ -24,9 +24,13 @@ var paintCell = function() {
 };
 
 $(document).ready(function() {
+    // default canvas
     generateCanvas(16, 16);
     paintCell();
+
     $("button[name=button_clear]").click(function() {
         $(".column").remove();
+        generateCanvas(16, 16);
+        paintCell();
     });
 });
