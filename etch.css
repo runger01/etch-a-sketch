@@ -1,9 +1,32 @@
+/*title bar*/
+#title_bar {
+	color: #ededed;
+	background: #2d2d2d;
+	height: 60px;
+	font-family: Arial;
+	padding: 10px;
+}
+#title_bar h1 {
+	color: orange;
+	font-size: 36px;
+}
+#title_bar h2 {
+	font-size: 14px;
+}
+/*tool bar*/
+#tool_bar {
+	height: 40px;
+	background: #efefef;
+}
 /*canvas*/
 #canvas {
-    border: solid 1px #efefef;
+	margin: 10px;
+	padding: 7px;
+	border-radius: 3px;
+    border: solid 1px #e5e5e5;
     float: left;
-    min-width: 960px;
-    min-height: 960px;
+    max-width: 960px;
+    max-height: 960px;
 }
 .column {
     float: left;
