@@ -55,13 +55,13 @@ $(document).ready(function() {
     paintBrush(randomColor());
 
     $("button[name=clear_canvas]").click(function() {
-        $("body").css("background", "#fff");
+        $("body").css("background", "#efefef");
         $(".column").remove();
         generateCanvas(gridSize, cellSize);
         paintBrush(randomColor());
     });
     $("button[name=new_canvas]").click(function() {
-        $("body").css("background", "#fff");
+        $("body").css("background", "#efefef");
         $(".column").remove();
         gridSize = prompt("Enter a new canvas size:");
         // recalculate values
